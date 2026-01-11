@@ -1,0 +1,12 @@
+from src import Parser
+if __name__ == '__main__':
+    from src.CommandLine import CommandLineOptions  # Only used in cli
+    CommandLineOptions.load()
+
+    # Example parser, filename from args
+    p = Parser(
+        filename=CommandLineOptions.flags.get("filename")
+    )
+
+    fd = p.get_function_definitions()
+    print([f.name for f in fd])
