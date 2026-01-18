@@ -12,6 +12,9 @@ if __name__ == '__main__':
 
         fd = p.get_function_definitions()
         print([f.name for f in fd])
+
+        fcalls = p.get_function_calls()
+        print(fcalls)
     except Exception as e:
         print(str(e))
         exit(1)
